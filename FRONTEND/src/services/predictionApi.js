@@ -1,10 +1,6 @@
 const API_BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
 
-/**
- * Send patient form values to the Flask backend.
- * The backend rebuilds the feature vector in training column order.
- * PatientID is ignored by the model.
- */
+
 export const predictParkinsons = async (formData) => {
   let response;
 
