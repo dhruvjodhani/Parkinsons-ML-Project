@@ -67,18 +67,23 @@ FEATURE_RANGES = {
 }
 
 
-CORS_ORIGINS = [
-    # Local development
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
+# CORS_ORIGINS = [
+#     # Local development
+#     "http://localhost:3000",
+#     "http://127.0.0.1:3000",
+#     "http://localhost:5173",
+#     "http://127.0.0.1:5173",
 
-    # Production frontend
-    "https://parkinsons-ml-project-frontend.vercel.app",
-]
+#     # Production frontend
+#     "https://parkinsons-ml-project-frontend.vercel.app",
+# ]
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": CORS_ORIGINS}})
+
+CORS(app, resources={
+    r"/*": {
+        "origins": "*"
+    }
+})
 
 model = None
 scaler = None
