@@ -1,0 +1,134 @@
+/* Responsive Breakpoints */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+  }
+
+  .about-featured-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-nav-center {
+    align-items: flex-start;
+  }
+
+  .footer-right {
+    grid-column: 1 / -1;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none; /* Hide main nav desktop pills */
+  }
+
+  .mobile-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-header {
+    height: 70px;
+  }
+
+  .main-content {
+    padding-top: 75px;
+  }
+
+  .section-wrapper {
+    padding: 2.5rem 1rem;
+  }
+
+  .hero-section {
+    padding: 2.5rem 1rem;
+    min-height: auto;
+  }
+
+  .brain-3d-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .neural-orb {
+    width: 170px;
+    height: 170px;
+  }
+
+  .card-pos-1, .card-pos-2, .card-pos-3 {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.85rem;
+  }
+
+  .progress-stepper {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  .progress-track {
+    display: none;
+  }
+
+  .step-label {
+    font-size: 0.75rem;
+  }
+
+  .form-section-card {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .form-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-actions-row button {
+    width: 100%;
+  }
+
+  .result-card-3d {
+    padding: 2rem 1rem;
+  }
+
+  .probability-ring-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .probability-value {
+    font-size: 2.75rem;
+  }
+
+  .orbit-node {
+    display: none; /* Hide orbiting floating nodes on small mobile screens */
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

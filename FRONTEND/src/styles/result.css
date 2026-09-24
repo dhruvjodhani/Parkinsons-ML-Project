@@ -1,0 +1,226 @@
+/* 3D Prediction Result UI */
+.result-card-3d {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-3d);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInResult 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInResult {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.result-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.result-status-badge.positive {
+  background: rgba(217, 4, 41, 0.15);
+  border: 1px solid var(--racing-red);
+  color: var(--racing-red);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.result-status-badge.negative {
+  background: rgba(75, 54, 33, 0.2);
+  border: 1px solid var(--coffee-bean);
+  color: var(--text-main);
+}
+
+/* 3D Probability Ring */
+.probability-ring-wrapper {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.ring-3d-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: ringTilt 10s ease-in-out infinite alternate;
+}
+
+@keyframes ringTilt {
+  0% { transform: rotateX(15deg) rotateY(-10deg); }
+  100% { transform: rotateX(-10deg) rotateY(15deg); }
+}
+
+.probability-circle-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.probability-bg-circle {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 14;
+}
+
+.probability-fill-circle {
+  fill: none;
+  stroke: var(--racing-red);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s ease-out;
+}
+
+.probability-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.probability-value {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--racing-red);
+  line-height: 1;
+}
+
+.probability-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* Orbiting feature nodes */
+.orbit-node {
+  position: absolute;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+  animation: floatNode 5s ease-in-out infinite alternate;
+}
+
+.node-1 { top: 0; left: -30px; animation-delay: 0s; }
+.node-2 { top: 10px; right: -30px; animation-delay: 1s; }
+.node-3 { bottom: 20px; left: -20px; animation-delay: 2s; }
+.node-4 { bottom: 10px; right: -20px; animation-delay: 1.5s; }
+
+@keyframes floatNode {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+/* Patient Feature Breakdown Dashboards */
+.summary-dashboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dashboard-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.summary-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.summary-card {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-card-header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--racing-red);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.summary-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.summary-item-key {
+  color: var(--text-secondary);
+}
+
+.summary-item-val {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Disclaimer Box */
+.disclaimer-box {
+  width: 100%;
+  background: rgba(217, 4, 41, 0.08);
+  border: 1px solid var(--racing-red);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.disclaimer-icon {
+  color: var(--racing-red);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}

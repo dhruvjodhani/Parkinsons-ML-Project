@@ -1,0 +1,178 @@
+/* Section Title */
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-tag {
+  color: var(--racing-red);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section-description {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+/* Feature Cards Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card-3d {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  box-shadow: var(--shadow-md);
+  cursor: default;
+}
+
+.feature-card-3d:hover {
+  transform: translateY(-8px) rotateX(4deg) rotateY(-2deg) translateZ(10px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-3d);
+}
+
+.feature-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: rgba(217, 4, 41, 0.1);
+  border: 1px solid rgba(217, 4, 41, 0.2);
+  color: var(--racing-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.feature-card-3d:hover .feature-icon-wrapper {
+  background: var(--racing-red);
+  color: #EDEBE6;
+  transform: translateZ(20px) scale(1.08);
+  box-shadow: 0 6px 16px var(--accent-glow);
+}
+
+.feature-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.feature-card-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.feature-card-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.feature-card-3d:hover .feature-card-glow {
+  opacity: 1;
+}
+
+/* Stats Section Layout */
+.stats-section {
+  background: linear-gradient(180deg, transparent 0%, var(--accent-light) 50%, transparent 100%);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 5rem 1.5rem;
+  margin: 4rem 0;
+}
+
+.stats-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.stat-card-3d {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 1.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  transform-style: preserve-3d;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.stat-card-3d:hover {
+  transform: translateY(-6px) translateZ(12px);
+  border-color: var(--racing-red);
+  box-shadow: var(--shadow-3d);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 3.25rem;
+  font-weight: 800;
+  color: var(--racing-red);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.stat-source-wrapper {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.stat-source-link {
+  color: var(--racing-red);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

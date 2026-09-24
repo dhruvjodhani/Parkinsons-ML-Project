@@ -1,0 +1,292 @@
+/* Prediction Page Styling */
+.prediction-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.prediction-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.prediction-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.form-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-sample {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: rgba(217, 4, 41, 0.1);
+  border: 1px solid rgba(217, 4, 41, 0.3);
+  color: var(--racing-red);
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-sample:hover {
+  background: var(--racing-red);
+  color: #EDEBE6;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.btn-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-clear:hover {
+  border-color: var(--racing-red);
+  color: var(--racing-red);
+}
+
+/* Progress Indicator Bar */
+.progress-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.progress-track {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  background: var(--border-color);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--racing-red);
+  transition: width var(--transition-normal);
+  box-shadow: 0 0 10px var(--racing-red);
+}
+
+.step-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.step-node {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+.step-item.active .step-node {
+  border-color: var(--racing-red);
+  background: var(--racing-red);
+  color: #EDEBE6;
+  box-shadow: 0 0 15px var(--accent-glow);
+  transform: scale(1.1);
+}
+
+.step-item.completed .step-node {
+  border-color: var(--racing-red);
+  background: var(--bg-card);
+  color: var(--racing-red);
+}
+
+.step-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.step-item.active .step-label {
+  color: var(--racing-red);
+  font-weight: 700;
+}
+
+/* Form Card Sections */
+.form-section-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
+  transition: transform var(--transition-fast);
+}
+
+.form-section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-section-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: rgba(217, 4, 41, 0.1);
+  color: var(--racing-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-section-title-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.form-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Field Controls */
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.field-unit {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.field-input, .field-select {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.field-input:focus, .field-select:focus {
+  border-color: var(--racing-red);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.field-error {
+  font-size: 0.8rem;
+  color: var(--racing-red);
+  font-weight: 600;
+}
+
+/* Binary NO / YES Segmented Control */
+.segmented-control {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg-input);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  gap: 4px;
+}
+
+.segment-btn {
+  padding: 0.65rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.segment-btn.active-no {
+  background: var(--coffee-bean);
+  color: #EDEBE6;
+  box-shadow: var(--shadow-sm);
+}
+
+.segment-btn.active-yes {
+  background: var(--racing-red);
+  color: #EDEBE6;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.prediction-error {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(217, 4, 41, 0.35);
+  background: rgba(217, 4, 41, 0.08);
+  color: var(--racing-red);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+/* Form Action Buttons */
+.form-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
