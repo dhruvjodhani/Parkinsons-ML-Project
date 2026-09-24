@@ -66,14 +66,17 @@ FEATURE_RANGES = {
     "Constipation": (0, 1),
 }
 
-# React (localhost:3000 from vite.config.js) talking to Flask on port 5000.
+
 CORS_ORIGINS = [
+    # Local development
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-]
 
+    # Production frontend
+    "https://parkinsons-ml-project-frontend.vercel.app",
+]
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": CORS_ORIGINS}})
 
